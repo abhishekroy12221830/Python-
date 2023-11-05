@@ -1,0 +1,53 @@
+def play_kbc():
+    # Initialize variables
+    player_name = input("What is your name? ")
+    score = 0
+
+    # Welcome message
+    print("Welcome to Kaun Banega Crorepati, " + player_name + "!")
+    print("Let's begin the game!")
+
+    # Questions and answers
+    questions = [
+        "Who is the current Prime Minister of India?",
+        "Which is the national anthem of India?",
+        "How many spokes are there in the Ashoka Chakra?",
+        "What is the sum of 2 + 2?",
+        "Who was the first Prime Minister of India?"
+    ]
+
+    answers = [
+        "Narendra Modi",
+        "Jana Gana Mana",
+        24,
+        4,
+        "Pt. Jawaharlal Nehru"
+    ]
+
+    # Play the game
+    for index, question in enumerate(questions):
+        print("\nQuestion " + str(index + 1) + ": " + question)
+
+        options = [
+            "1) " + answers[index][0],
+            "2) " + answers[index][1]
+        ]
+
+        print("\nYour options are:")
+        for option in options:
+            print(option)
+
+        user_answer = int(input("\nEnter your answer (1 or 2): "))
+
+        if user_answer == 1 and answers[index] == answers[index][0]:
+            print("\nCorrect answer!")
+            score += 10000
+        else:
+            print("\nIncorrect answer. The correct answer is " + answers[index][0])
+
+    # Final message
+    print("\nThank you for playing Kaun Banega Crorepati, " + player_name + "!")
+    print("Your final score is: ₹" + str(score))
+
+# Play the game
+play_kbc()
